@@ -1,0 +1,39 @@
+General Information
+===================
+
+This is version 0.1.0 of wide. Wide stand for Well Integrated Development Environment.
+
+wide is released under the GNU General Public License (GPL) version 2 or
+later, see the file 'COPYING' for more information.
+
+Installation
+============
+
+Simple install procedure:
+
+  % git clone https://github.com/christian-brunello/wide.git # clone repository
+  % cd wide				# change to the toplevel directory
+	% autoreconf    # create build tools
+  % ./configure		# run the `configure' script
+  % make					# build wide
+  [ Become root if necessary ]
+  % make install	# install wide
+
+See the file 'INSTALL' for more detailed information.
+
+
+How to report bugs
+==================
+
+Bugs should be reported to the github repository.
+
+Patches
+=======
+
+Please create patches with the git format-patch command.
+
+If you are interested in helping us to develop gedit, please see the 
+file 'AUTHOR' for contact information.
+
+
+  The wide team.
