@@ -4,8 +4,11 @@
 AC_PREREQ([2.69])
 AC_INIT([WIDE], [0.1.0], [])
 AM_INIT_AUTOMAKE
+AC_CONFIG_SRCDIR([doc/gnu-fdl.texi])
 
 # Checks for programs.
+AC_CHECK_PROG([wide_have_makeinfo], [makeinfo], [yes], [no])
+AM_CONDITIONAL([BUILD_TEXINFO], [test "x$wide_have_makeinfo" = "xyes"])
 
 # Checks for libraries.
 
