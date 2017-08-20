@@ -60,46 +60,113 @@ Documentation License".
 @node Project background, Stakeholders, , Problem statement
 @section Project background
 
-We programmers often find ourselves having to use specific programs
-depending on the kind of development we have to do. The result is that
-we can not focus on writing code, but we must also learn how to use
-the program.
+Since the early 1990s, with the introduction of character terminals, the
+spread of integrated development environments (IDEs) has begun. Over the
+years many features have been developed, but each IDE has been conceived
+as a unique program, for a specific type of programming, for a specific
+programming language or a specific toolkit.
 
-There is no complete development system. Some offer great features, but
-there is always a need to open some other programs to do simple things
-like transferring files, seeing results, debugging, and so on.
-
-The screen is not always optimized, but is split between different
-components, even when they are not used.
-
-When writing code for many hours, moving our hand from the keyboard
-to the mouse and then putting it back on the keyboard, many times,
-it gets tiring. Almost all development systems design the graphics by thinking of the
-mouse. 
-
-At this point, if we want a system suitable for all kinds of programming,
-optimized in space, fast, and that helps us in all the tasks@dots{} we have
-to create it!
+The result is that many programmers are forced to use different IDEs
+depending on the program they want to create. Many others have given
+up using an IDE, they prefer to use an editor to write code (often Vim)
+and command-line tools to perform all other tasks.
 
 @node Stakeholders, Users, Project background, Problem statement
 @section Stakeholders
-This project is free, so interested parties are all people in the world, 
-especially programmers.
+
+The stakeholders in this project will be programmers who want to join
+the development or add specific components to their needs.
+
+Indirectly interested parties will be programmers or companies working
+on similar projects. These people will not be happy about this project
+because they risk losing their users.
 
 @node Users, Risks, Stakeholders, Problem statement
 @section Users
 
-The users of this project will be programmers. We can identify the
-following categories: @dfn{Application developers}, @dfn{System
-developers}, @dfn{Game developers} and @dfn{Web developers}.
+Users of this system are developers of different categories:
+
+@table @dfn
+@item Application developers
+
+This type of programmer creates user applications such as text editor,
+file manager, or web browser. Games are also included in this category
+of programs.
+
+Programmers of this type use almost always high-level, compiled or
+interpreted languages.  Depending on the language, they use different
+libraries to create the user interface. Such interface may be textual
+or graphic. In the case of games, the graphical interface can be 2D or 3D.
+
+Often, programmers of this type use IDEs that favor the
+development. Examples of these cases are programmers using the Qt
+libraries and the QtCreator program, Android application programmers using
+Android Studio and so on.  Programmers who do not use an IDE, use a text
+editor (often Vim or Emacs) and automate the build using various tools.
+The most used are: Ant, autotools, qmake and cmake. In the case of games,
+the build system is often customized to handle specific components.
+
+Created programs can be run on the local or remote machine. Sometimes
+the remote machine has a different architecture. Sometimes the operating
+system is also different. When the machine is remote, the programmer
+needs to transfer the program. To do this use the network connection
+or a usb cable.
+
+@item System developers
+
+System programmers create everything that is behind the
+scenes. Bootloader, firmware, kernels, drivers, middleware libraries,
+and system utilities are all examples of programs in this category.
+
+Programmers of this type use almost always compiled low-level
+languages. Sometimes they must create binary files with specific layouts,
+or with specific dimensions. The bootloader is a typical example of
+these binaries.
+
+In this category, programmers who use an IDE are really few. Often
+they do it because they are forced. Most people use a text editor
+(often emacs or vim) and command-line tools. To automate the build,
+various tools are used. The most used are: Kconfig and autotools.
+
+Created programs can be run on the local or remote machine. Sometimes the
+architecture is different. Sometimes the operating system is different
+or is not there. When downloading files, this type of programmer uses
+an internet connection, a usb cable, or a serial cable.
+
+@item Web developers
+
+This category includes everything that works through a browser, including
+CGI programs, Java applets, browser plugins, and CMS plugins.
+
+Programmers in this category usually use html combined with other
+languages such as php, javascript, etc. Exceptions are CGI programs, which
+can be created in compiled or interpreted languages and Java applets.
+
+In recent years, the use of CMS has been spread, the most used systems
+being Wordpress and Drupal.
+
+In this category, programmers prefer to use a text editor and command line tools.
+
+Programmers of this category often work directly in their own machine,
+where, in addition to writing tools, they have a web server to display
+the result. When that is not true, they use a network connection to
+transfer the files to the target machine.
+@end table
 
 @node Risks, Assumptions, Users, Problem statement
 @section Risks
 The main risk of this project is the failure to support all kinds of
 programming, and the tasks related to each. Even if we do not develop
 everything right away, we have to set up the system so that it supports
-all the common features of a development system and prepare it so that
+all the common features of a development environment and prepare it so that
 it's easy to add new ones.
+
+The second risk is related to the design. There are many tools to develop,
+very different from each other. We need to find a consistent way to use
+them. Many programmers prefer to use the mouse; others prefer to use
+keyboard combinations. We must offer both options. As for the keyboard,
+we have to offer the ability to modify the combinations. Not all keyboards
+are the same.
 
 @node Assumptions, , Risks, Problem statement
 @section Assumptions
@@ -124,12 +191,7 @@ There are few assumptions underlying this system:
 @node Vision statement, List of features, , Vision of the solution
 @section Vision statement
 
-The purpose of this project is to create a complete development system.
-
-The system will support programmers in all tasks, in any development category.
-
-The screen space will be handled in contexts. For each context only the 
-affected windows will be displayed.
+The purpose of this project is to create an IDE capable of satisfying all types of programmers.
 
 @node List of features, Features that will not be developed, Vision statement, Vision of the solution
 @section List of features
